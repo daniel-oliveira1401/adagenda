@@ -1,59 +1,68 @@
-# Adagenda
+# ADAgenda
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
+Projeto de Agenda de Contatos para o trabalho em grupo da ADA.
 
-## Development server
+## Branch principal
 
-To start a local development server, run:
+A branch principal do projeto (onde todo o trabalho coletivo dos integrantes deve estar contido ao final do projeto) é a:
 
-```bash
-ng serve
+```
+develop
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Partes integrantes:
 
-## Code scaffolding
+* Cadastro de contatos (nome, telefone, e-mail)
+* Edição e exclusão de contatos
+* Busca por nome
+* Lista de contatos ordenada
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
+### Coisas para fazer:
+
+* Serviço de persistência utilizando LocalStorage
+* Componente de inclusão de Contato (nome, telefone, e-mail)
+    *   Utilizar uma tela de inclusão de contato
+* Edição de contato
+    *   Utilizar uma tela atualização de contato (possivelmente reutilizando o componente da tela de inclusão de contato)
+* Exclusão de contato (pode utilizar um alerta para confirmar a remoção)
+* Listagem de contatos. Deve conter as informações básicas do contato. A listagem deve suportar alguma forma de definir a ordenação dos items
+* Busca por nome (filtragem dos dados):
+    * O que for digitado no filtro deve ser utilizado para esconder os itens que não contiverem aquele texto no nome (somente busca no nome)
+
+
+### Padrões
+
+
+#### Nomeclatura
+
+Sempre usar o sufixo que representa o que aquele artefato do projeto representa, como por exemplo: Service, Pipe, Model, Component.
+
+Todos os componentes devem possuir a palavra "Component" como sufixo. 
+Exemplo: 
+```
+ContatoComponent
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
+#### Estilo
+
+No arquivo style.scss estão localizadas as definições padrões que devem ser utilizadas como base para estilização dos componentes do projeto.
+
+#### Estrutura do projeto
+
+A estrutura de pastas do projeto segue a arquitetura padrão da empresa. Os módulos dentro da pasta features devem ser por domínio da aplicação. Nossa aplicação tem apenas um domínio (contatos), portanto todo o desenvolvimento dos componentes deve ser feito dentro da pasta features/contatos/
+
+Estrutura de referência do projeto:
+
 ```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
+/contatos
+    /components
+        /lista-contatos
+        /form-contato
+        /contato
+    contatos.ts
+    contatos.html
+    contatos.module.ts
+    contatos.routing.ts
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
