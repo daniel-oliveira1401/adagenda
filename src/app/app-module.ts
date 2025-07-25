@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
-import { ContatoPersistence } from './shared/interface/contato-persistence';
 
+import { ContatosModule } from './features/contatos/contatos-module';
+import { ContatoPersistence } from './shared/interface/contato-persistence';
 export const CONTATO_PERSISTENCE_IMPLEMENTATION = new InjectionToken<ContatoPersistence>('contato_persistence_token');
 
 @NgModule({
@@ -13,7 +14,8 @@ export const CONTATO_PERSISTENCE_IMPLEMENTATION = new InjectionToken<ContatoPers
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ContatosModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

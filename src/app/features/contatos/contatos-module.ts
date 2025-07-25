@@ -2,17 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ContatosRoutingModule } from './contatos-routing-module';
+import { ContatoComponent } from './contato-component/contato-component';
 import { CONTATO_PERSISTENCE_IMPLEMENTATION } from '../../app-module';
 import { LocalStorageContatoPersistenceService } from '../../core/services/local-storage-contato-persistence-service';
 import { ContatoService } from '../../core/services/contato-service';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ContatoComponent
+  ],
   imports: [
     CommonModule,
     ContatosRoutingModule
   ],
+  exports: [
+    ContatoComponent
   providers: [
     {
       provide: CONTATO_PERSISTENCE_IMPLEMENTATION,
