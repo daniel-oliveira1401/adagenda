@@ -110,6 +110,9 @@ export class ContatoService {
     this.persistenceService.listagemContatos().pipe(take(1)).subscribe({
       next: (contatos)=>{
         this.contatos.set(contatos);
+      },
+      error: (error) => {
+        console.error("Erro ao listar contatos", error);
       }
     });
   }
@@ -121,6 +124,9 @@ export class ContatoService {
     this.persistenceService.adicionarContato(nome, telefone, email).pipe(take(1)).subscribe({
       next: (res : ContatoModel)=>{
         this.listagemContatos();
+      },
+      error: (error)=>{
+        console.error("Erro ao adicionar contato", error);
       }
     });
   }
@@ -134,7 +140,7 @@ export class ContatoService {
         this.listagemContatos();
       },
       error: (error) => {
-        console.error("Erro ao atualizar contato", error);
+        console.error("Erro ao atualizar contato", contatoAtualizado, error);
       }
     });
   }
@@ -146,13 +152,16 @@ export class ContatoService {
     return this.persistenceService.getContato(idContato).pipe(take(1));
   }
 
-  excluirContato(idContato : string){
+  excluirContato(idContato : string) : void{
     //pipe(take(1)) -> serve para garantir que mesmo se a implementação do serviço de
     //persistência não completar o observable depois de emitir um valor não haverá
     //subscription ativa depois da emissão
     this.persistenceService.excluirContato(idContato).pipe(take(1)).subscribe({
       next: ()=>{
         this.listagemContatos();
+      },
+      error: (error) => {
+        console.error("Erro ao excluir contato " + idContato, error);
       }
     })
   }
