@@ -7,5 +7,23 @@ import { Component } from '@angular/core';
   styleUrl: './contato-component.scss'
 })
 export class ContatoComponent {
+  exibirModal = false;
+  user = {
+    nome: 'Moita',
+    tel: '(31)99999-9999',
+    email: 'moita@email.com'
+  };
 
+  editarContato() {
+    this.exibirModal = true;
+  }
+
+  fecharModal() {
+    this.exibirModal = false;
+  }
+
+  salvarUsuario(userAtualizado: any) {
+    this.user = userAtualizado;
+    this.fecharModal();
+  }
 }

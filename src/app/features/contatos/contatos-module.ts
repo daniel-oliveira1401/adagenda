@@ -6,18 +6,21 @@ import { ContatoComponent } from './contato-component/contato-component';
 import { CONTATO_PERSISTENCE_IMPLEMENTATION } from '../../app-module';
 import { LocalStorageContatoPersistenceService } from '../../core/services/local-storage-contato-persistence-service';
 import { ContatoService } from '../../core/services/contato-service';
+import { ContatoModal } from './contato-modal/contato-modal';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    ContatoComponent
+    ContatoComponent,
+    ContatoModal
   ],
   imports: [
     CommonModule,
-    ContatosRoutingModule
+    ContatosRoutingModule, FormsModule
   ],
   exports: [
-    ContatoComponent
+    ContatoComponent],
   providers: [
     {
       provide: CONTATO_PERSISTENCE_IMPLEMENTATION,
