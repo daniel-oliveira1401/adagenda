@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContatoModal } from './contato-modal';
+import { EdicaoContatoModal } from './edicao-contato-modal';
 
 describe('ContatoModal', () => {
-  let component: ContatoModal;
-  let fixture: ComponentFixture<ContatoModal>;
+  let component: EdicaoContatoModal;
+  let fixture: ComponentFixture<EdicaoContatoModal>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ContatoModal]
+      declarations: [EdicaoContatoModal]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ContatoModal);
+    fixture = TestBed.createComponent(EdicaoContatoModal);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -16,7 +16,6 @@ export const CONTATO_PERSISTENCE_IMPLEMENTATION = new InjectionToken<ContatoPers
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ContatosModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

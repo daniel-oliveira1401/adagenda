@@ -1,0 +1,29 @@
+<div class="modal-backdrop" *ngIf="user != undefined" (click)="onFechar()">
+  <form #form="ngForm" class="modal listSection" (ngSubmit)="onSalvar()" (click)="$event.stopPropagation()" >
+    <h3>{{ehAdicionar() ? 'Adicionar Contato' : 'Editar Contato'}}</h3>
+    <hr>
+    <div class="modal-body">
+      <label>
+        Nome:
+      </label>
+      <input required name="nome" [(ngModel)]="user.nome" />
+      
+      <label>
+        Telefone:
+      </label>
+      <input required name="telefone" type="tel" [(ngModel)]="user.telefone" />
+      
+      <label>
+        Email:
+      </label>
+      <input name="email" [(ngModel)]="user.email" type="email" />
+
+    </div>
+    
+
+    <div class="modal-actions">
+      <button type="button" class="btn-fechar" (click)="onFechar()">Cancelar</button>
+      <button class="btn-salvar" [disabled]="form.invalid" type="submit">{{ehAdicionar()? 'Adicionar' : 'Salvar'}}</button>
+    </div>
+  </form>
+</div>

@@ -1,15 +1,9 @@
-<div class="modal-backdrop">
-  <div class="modal listSection">
-    <h3>Confirma a exclusão do contato?</h3>
-
-    <label>
-      Nome:
-      <span>{{user.nome}}</span>
-    </label>
-
+<div class="modal-backdrop" *ngIf="user != undefined" (click)="onFecharModalExclusao()">
+  <div class="modal listSection" (click)="$event.stopPropagation()">
+    <h3>Tem certeza que deseja excluir <span class="nome">{{user.nome}}</span>?</h3>
     <div class="modal-actions">
-      <button (click)="onExcluir()">Sim</button>
-      <button (click)="onFecharModalExclusao()">Não</button>
+      <button class="btn-excluir" (click)="onExcluir()">Excluir</button>
+      <button class="btn-fechar" (click)="onFecharModalExclusao()">Cancelar</button>
     </div>
   </div>
 </div>

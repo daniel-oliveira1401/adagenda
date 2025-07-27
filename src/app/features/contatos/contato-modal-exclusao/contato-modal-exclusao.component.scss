@@ -1,0 +1,17 @@
+@use 'variables';
+@use "mixins";
+
+
+@include mixins.modal-padrao();
+
+.btn-excluir{
+  @include mixins.botao-padrao(0.5rem, false, variables.$vermelho);
+}
+
+.btn-fechar{
+  @include mixins.botao-padrao(0.5rem, false, variables.$primary-color, false);
+}
+
+.nome{
+  color: variables.$primary-color;
+}

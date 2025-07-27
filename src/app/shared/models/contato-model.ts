@@ -5,4 +5,8 @@ export class ContatoModel {
         public telefone : string,
         public email : string
     ){}
+
+    static vazio(){
+        return new ContatoModel('', '', '', '');
+    }
 }

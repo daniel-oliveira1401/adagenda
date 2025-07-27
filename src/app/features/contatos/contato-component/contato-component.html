@@ -1,29 +1,51 @@
-<h1>ADAgenda</h1>
+<h1><span>ADA</span>genda de Contatos</h1>
 
 <div class="container">
   <div class="formSection">
-    <input placeholder="Digite um nome" />
-    <button>Adicionar</button>
+    <button (click)="abrirModalAdicionarContato()" class="addContato">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>  
+      <span>Novo Contato</span>
+    </button>
+    <input #inputFiltro type="text" placeholder="🔍 Digite um nome" />
   </div>
 
   <div class="listSection">
     <h3>Usuários cadastrados:</h3>
-    <app-user-card-component></app-user-card-component>
-    <app-user-card-component></app-user-card-component>
-    <app-user-card-component></app-user-card-component>
+    <app-user-card-component *ngFor="let contato of contatosParaMostrar()" 
+      [user]="contato"
+      (excluirContato)="excluirContato($event)"
+      (atualizarContato)="editarContato($event)"
+    />
+    <div *ngIf="naoTemContatosCadastrados()" class="contatos-vazio">
+      <p class="sem-contatos" >
+        Não existem contatos cadastrados. Que tal cadastrar seu primeiro?
+      </p>
+
+      <button (click)="abrirModalAdicionarContato()" class="addContato">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>  
+        <span>Novo Contato</span>
+      </button>
+    </div>
+    <div *ngIf="naoEncontrouResultados()" class="filtro-sem-resultado">
+      Sem resultados para sua pesquisa 😭
+    </div>
   </div>
 </div>
 
-<app-contato-modal
+<app-edicao-contato-modal
+
   *ngIf="exibirModal"
-  [user]="user"
+  [user]="contatoSelecionado"
+  [tipoDeModal]="this.tipoDeModal"
   (fechar)="fecharModal()"
   (salvar)="salvarUsuario($event)">
-</app-contato-modal>
+</app-edicao-contato-modal>
+
 
 <app-contato-modal-exclusao
   *ngIf="exibirModalExclusao"
-  [user]="user"
+  [user]="contatoSelecionado"
   (fecharModalExclusao)="fecharModalExclusao()"
   (excluirContato)="deletarContato($event)">
 </app-contato-modal-exclusao>
+
