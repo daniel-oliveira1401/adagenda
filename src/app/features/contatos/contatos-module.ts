@@ -25,12 +25,8 @@ import { ContatoModalExclusaoComponent } from './contato-modal-exclusao/contato-
     FormsModule
   ],
   exports: [
-<<<<<<< HEAD
     ContatoComponent
   ],
-=======
-    ContatoComponent],
->>>>>>> develop
   providers: [
     {
       provide: CONTATO_PERSISTENCE_IMPLEMENTATION,
