@@ -7,6 +7,7 @@ import { CONTATO_PERSISTENCE_IMPLEMENTATION } from '../../app-module';
 import { LocalStorageContatoPersistenceService } from '../../core/services/local-storage-contato-persistence-service';
 import { ContatoService } from '../../core/services/contato-service';
 import { ContatoModal } from './contato-modal/contato-modal';
+import { UserCardComponent } from './user-card-component/user-card-component';
 import { FormsModule } from '@angular/forms';
 import { ContatoModalExclusaoComponent } from './contato-modal-exclusao/contato-modal-exclusao.component';
 
@@ -14,6 +15,7 @@ import { ContatoModalExclusaoComponent } from './contato-modal-exclusao/contato-
 @NgModule({
   declarations: [
     ContatoComponent,
+    UserCardComponent,
     ContatoModal,
     ContatoModalExclusaoComponent
   ],
@@ -23,7 +25,12 @@ import { ContatoModalExclusaoComponent } from './contato-modal-exclusao/contato-
     FormsModule
   ],
   exports: [
+<<<<<<< HEAD
+    ContatoComponent
+  ],
+=======
     ContatoComponent],
+>>>>>>> develop
   providers: [
     {
       provide: CONTATO_PERSISTENCE_IMPLEMENTATION,
@@ -33,6 +40,7 @@ import { ContatoModalExclusaoComponent } from './contato-modal-exclusao/contato-
       useClass: LocalStorageContatoPersistenceService
     },
     ContatoService
+
   ]
 })
 export class ContatosModule { }
