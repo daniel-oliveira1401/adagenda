@@ -13,3 +13,10 @@
     <app-user-card-component></app-user-card-component>
   </div>
 </div>
+
+<app-contato-modal
+  *ngIf="exibirModal"
+  [user]="user"
+  (fechar)="fecharModal()"
+  (salvar)="salvarUsuario($event)">
+</app-contato-modal>

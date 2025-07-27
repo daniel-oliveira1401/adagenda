@@ -7,6 +7,7 @@ import { CONTATO_PERSISTENCE_IMPLEMENTATION } from '../../app-module';
 import { LocalStorageContatoPersistenceService } from '../../core/services/local-storage-contato-persistence-service';
 import { ContatoService } from '../../core/services/contato-service';
 import { UserCardComponent } from './user-card-component/user-card-component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,11 +17,16 @@ import { UserCardComponent } from './user-card-component/user-card-component';
   ],
   imports: [
     CommonModule,
-    ContatosRoutingModule
+    ContatosRoutingModule, 
+    FormsModule
   ],
   exports: [
+<<<<<<< HEAD
     ContatoComponent
   ],
+=======
+    ContatoComponent],
+>>>>>>> develop
   providers: [
     {
       provide: CONTATO_PERSISTENCE_IMPLEMENTATION,
