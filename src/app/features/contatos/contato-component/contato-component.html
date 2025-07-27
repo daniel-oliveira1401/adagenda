@@ -1,3 +1,5 @@
+<h1>ADAgenda</h1>
+
 <div class="container">
   <div class="formSection">
     <input placeholder="Digite um nome" />
@@ -6,34 +8,8 @@
 
   <div class="listSection">
     <h3>Usuários cadastrados:</h3>
-    <div class="userCard">
-      <p><strong>Nome:</strong> {{ "user.name" }}</p>
-      <p><strong>Telefone:</strong> {{ "user.phone" }}</p>
-      <p><strong>Email:</strong> {{ "user.email" }}</p>
-      <div class="button-group">
-        <button>
-          <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-            <path
-              d="M5.5 5.5v7M8 5.5v7M10.5 5.5v7M1 2h14v1H1V2zm2 1h10l-.5 12H3.5L3 3z"
-            />
-          </svg>
-          Excluir
-        </button>
-        <button>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M12.146.854a.5.5 0 0 1 .708 0l2.292 2.292a.5.5 0 0 1 0 .708l-9.439 9.44-3.686.922a.5.5 0 0 1-.605-.605l.922-3.686 9.44-9.439zM11.207 2L3 10.207v1.586h1.586L13 3.793 11.207 2z"
-            />
-          </svg>
-          Editar
-        </button>
-      </div>
-    </div>
+    <app-user-card-component></app-user-card-component>
+    <app-user-card-component></app-user-card-component>
+    <app-user-card-component></app-user-card-component>
   </div>
 </div>
