@@ -8,16 +8,19 @@ import { LocalStorageContatoPersistenceService } from '../../core/services/local
 import { ContatoService } from '../../core/services/contato-service';
 import { ContatoModal } from './contato-modal/contato-modal';
 import { FormsModule } from '@angular/forms';
+import { ContatoModalExclusaoComponent } from './contato-modal-exclusao/contato-modal-exclusao.component';
 
 
 @NgModule({
   declarations: [
     ContatoComponent,
-    ContatoModal
+    ContatoModal,
+    ContatoModalExclusaoComponent
   ],
   imports: [
     CommonModule,
-    ContatosRoutingModule, FormsModule
+    ContatosRoutingModule, 
+    FormsModule
   ],
   exports: [
     ContatoComponent],

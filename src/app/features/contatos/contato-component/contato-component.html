@@ -11,7 +11,7 @@
       <p><strong>Telefone:</strong> {{ user.tel }}</p>
       <p><strong>Email:</strong> {{ user.email }}</p>
       <div class="button-group">
-        <button>
+        <button (click)="excluirContato()">
           <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
             <path
               d="M5.5 5.5v7M8 5.5v7M10.5 5.5v7M1 2h14v1H1V2zm2 1h10l-.5 12H3.5L3 3z"
@@ -44,3 +44,10 @@
   (fechar)="fecharModal()"
   (salvar)="salvarUsuario($event)">
 </app-contato-modal>
+
+<app-contato-modal-exclusao
+  *ngIf="exibirModalExclusao"
+  [user]="user"
+  (fecharModalExclusao)="fecharModalExclusao()"
+  (excluirContato)="deletarContato($event)">
+</app-contato-modal-exclusao>

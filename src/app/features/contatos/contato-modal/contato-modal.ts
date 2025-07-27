@@ -11,6 +11,7 @@ export class ContatoModal {
   @Input() user = { nome: '', tel: '', email: '' };
   @Output() fechar = new EventEmitter<void>();
   @Output() salvar = new EventEmitter<any>();
+  
 
   onSalvar() {
     this.salvar.emit(this.user);
@@ -19,4 +20,5 @@ export class ContatoModal {
   onFechar() {
     this.fechar.emit();
   }
+  
 }
