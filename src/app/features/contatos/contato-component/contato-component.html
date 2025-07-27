@@ -20,3 +20,10 @@
   (fechar)="fecharModal()"
   (salvar)="salvarUsuario($event)">
 </app-contato-modal>
+
+<app-contato-modal-exclusao
+  *ngIf="exibirModalExclusao"
+  [user]="user"
+  (fecharModalExclusao)="fecharModalExclusao()"
+  (excluirContato)="deletarContato($event)">
+</app-contato-modal-exclusao>

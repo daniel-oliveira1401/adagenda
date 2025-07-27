@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class ContatoComponent {
   exibirModal = false;
+  exibirModalExclusao = false;
+
   user = {
     nome: 'Moita',
     tel: '(31)99999-9999',
@@ -25,5 +27,18 @@ export class ContatoComponent {
   salvarUsuario(userAtualizado: any) {
     this.user = userAtualizado;
     this.fecharModal();
+  }
+
+  excluirContato() {
+    this.exibirModalExclusao = true;
+  }
+
+  fecharModalExclusao() {
+    this.exibirModalExclusao = false;
+  }
+
+  deletarContato(userAExcluir: any) {
+    console.log("Contato excluido: ", userAExcluir)
+    this.fecharModalExclusao();
   }
 }
