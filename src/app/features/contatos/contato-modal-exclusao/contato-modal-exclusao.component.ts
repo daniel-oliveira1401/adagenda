@@ -9,12 +9,12 @@ import { ContatoModel } from '../../../shared/models/contato-model';
 })
 export class ContatoModalExclusaoComponent {
 
-@Input() user : ContatoModel | undefined;
+@Input() contato : ContatoModel | undefined;
 @Output() fecharModalExclusao = new EventEmitter<void>();
 @Output() excluirContato = new EventEmitter<any>();
 
   onExcluir() {
-    this.excluirContato.emit(this.user);
+    this.excluirContato.emit(this.contato);
   }
 
   onFecharModalExclusao() {

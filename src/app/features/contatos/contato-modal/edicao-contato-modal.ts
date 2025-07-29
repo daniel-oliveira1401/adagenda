@@ -11,13 +11,13 @@ export type ModalType = 'adicionar' | 'atualizar';
 })
 export class EdicaoContatoModal {
 
-  @Input() user : ContatoModel | undefined; 
+  @Input() contato : ContatoModel | undefined; 
   @Input({required: true}) tipoDeModal! : ModalType;
   @Output() fechar = new EventEmitter<void>();
   @Output() salvar = new EventEmitter<ContatoModel>();
 
   onSalvar() {
-    this.salvar.emit(this.user);
+    this.salvar.emit(this.contato);
   }
 
   onFechar() {

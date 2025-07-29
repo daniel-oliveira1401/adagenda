@@ -10,9 +10,9 @@
   </div>
 
   <div class="listSection">
-    <h3>Usuários cadastrados:</h3>
-    <app-user-card-component *ngFor="let contato of contatosParaMostrar()" 
-      [user]="contato"
+    <h3>Contatos cadastrados:</h3>
+    <app-contato-card-component *ngFor="let contato of contatosParaMostrar(); trackBy: trackById" 
+      [contato]="contato"
       (excluirContato)="excluirContato($event)"
       (atualizarContato)="editarContato($event)"
     />
@@ -35,16 +35,16 @@
 <app-edicao-contato-modal
 
   *ngIf="exibirModal"
-  [user]="contatoSelecionado"
+  [contato]="contatoSelecionado"
   [tipoDeModal]="this.tipoDeModal"
   (fechar)="fecharModal()"
-  (salvar)="salvarUsuario($event)">
+  (salvar)="salvarContato($event)">
 </app-edicao-contato-modal>
 
 
 <app-contato-modal-exclusao
   *ngIf="exibirModalExclusao"
-  [user]="contatoSelecionado"
+  [contato]="contatoSelecionado"
   (fecharModalExclusao)="fecharModalExclusao()"
   (excluirContato)="deletarContato($event)">
 </app-contato-modal-exclusao>

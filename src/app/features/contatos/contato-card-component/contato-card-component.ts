@@ -2,28 +2,28 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ContatoModel } from '../../../shared/models/contato-model';
 
 @Component({
-  selector: 'app-user-card-component',
+  selector: 'app-contato-card-component',
   standalone: false,
-  templateUrl: './user-card-component.html',
-  styleUrl: './user-card-component.scss'
+  templateUrl: './contato-card-component.html',
+  styleUrl: './contato-card-component.scss'
 })
-export class UserCardComponent {
+export class ContatoCardComponent {
 
-  @Input({required: true}) user! : ContatoModel;
+  @Input({required: true}) contato! : ContatoModel;
 
   @Output() readonly excluirContato = new EventEmitter<ContatoModel>();
   @Output() readonly atualizarContato = new EventEmitter<ContatoModel>();
 
   outputExcluirContato(){
-    this.excluirContato.emit(this.user);
+    this.excluirContato.emit(this.contato);
   }
 
   outputAtualizarContato(){
-    this.atualizarContato.emit(this.user);
+    this.atualizarContato.emit(this.contato);
   }
 
   contatoTemEmail(){
-    return this.user?.email != undefined && this.user.email.length > 0
+    return this.contato?.email != undefined && this.contato.email.length > 0
   }
 
 }

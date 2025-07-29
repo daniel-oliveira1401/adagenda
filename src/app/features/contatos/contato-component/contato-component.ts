@@ -78,14 +78,14 @@ export class ContatoComponent implements OnInit, AfterViewInit, OnDestroy {
     this.exibirModal = false;
   }
 
-  salvarUsuario(userAtualizado: ContatoModel) {
+  salvarContato(contatoAtualizado: ContatoModel) {
 
     this.fecharModal();
 
-    if(userAtualizado.id){
-      this.contatoService.atualizarContato(userAtualizado);
+    if(contatoAtualizado.id){
+      this.contatoService.atualizarContato(contatoAtualizado);
     }else{
-      this.contatoService.adicionarContato(userAtualizado.nome, userAtualizado.telefone, userAtualizado.email);
+      this.contatoService.adicionarContato(contatoAtualizado.nome, contatoAtualizado.telefone, contatoAtualizado.email);
     }
 
   }
@@ -109,9 +109,13 @@ export class ContatoComponent implements OnInit, AfterViewInit, OnDestroy {
     this.exibirModalExclusao = false;
   }
 
-  deletarContato(userAExcluir: ContatoModel) {
+  deletarContato(contatoAExcluir: ContatoModel) {
     this.fecharModalExclusao();
-    this.contatoService.excluirContato(userAExcluir.id);
+    this.contatoService.excluirContato(contatoAExcluir.id);
+  }
+
+  trackById(index : number, contato : ContatoModel){
+    return contato.id;
   }
 
   ngOnDestroy(): void {

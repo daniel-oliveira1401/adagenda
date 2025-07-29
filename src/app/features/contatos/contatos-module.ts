@@ -7,16 +7,17 @@ import { CONTATO_PERSISTENCE_IMPLEMENTATION } from '../../app-module';
 import { LocalStorageContatoPersistenceService } from '../../core/services/local-storage-contato-persistence-service';
 import { ContatoService } from '../../core/services/contato-service';
 import { EdicaoContatoModal } from './contato-modal/edicao-contato-modal';
-import { UserCardComponent } from './user-card-component/user-card-component';
+
 import { FormsModule } from '@angular/forms';
 import { ContatoModalExclusaoComponent } from './contato-modal-exclusao/contato-modal-exclusao.component';
 import { PaginaContatoComponent } from './pagina-contato-component';
+import { ContatoCardComponent } from './contato-card-component/contato-card-component';
 
 
 @NgModule({
   declarations: [
     ContatoComponent,
-    UserCardComponent,
+    ContatoCardComponent,
     EdicaoContatoModal,
     ContatoModalExclusaoComponent,
     PaginaContatoComponent

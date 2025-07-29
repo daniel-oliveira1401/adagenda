@@ -1,6 +1,6 @@
-<div class="modal-backdrop" *ngIf="user != undefined" (click)="onFecharModalExclusao()">
+<div class="modal-backdrop" *ngIf="contato != undefined" (click)="onFecharModalExclusao()">
   <div class="modal listSection" (click)="$event.stopPropagation()">
-    <h3>Tem certeza que deseja excluir <span class="nome">{{user.nome}}</span>?</h3>
+    <h3>Tem certeza que deseja excluir <span class="nome">{{contato.nome}}</span>?</h3>
     <div class="modal-actions">
       <button class="btn-excluir" (click)="onExcluir()">Excluir</button>
       <button class="btn-fechar" (click)="onFecharModalExclusao()">Cancelar</button>

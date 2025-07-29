@@ -1,8 +1,8 @@
-    <div class="userCard">
-      <p class="name">{{ user.nome }}</p>
+    <div class="contato-card">
+      <p class="name">{{ contato.nome }}</p>
       <hr>
-      <p><span class="description">Telefone:</span> {{ user.telefone }}</p>
-      <p *ngIf="contatoTemEmail()" ><span class="description">Email:</span> {{ user.email }}</p>
+      <p><span class="description">Telefone:</span> {{ contato.telefone }}</p>
+      <p *ngIf="contatoTemEmail()" ><span class="description">Email:</span> {{ contato.email }}</p>
       <div class="button-group">
         <button class="btn-editar" (click)="outputAtualizarContato()" >
           <svg

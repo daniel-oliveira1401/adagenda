@@ -2,6 +2,12 @@
 @use 'variables';
 @use 'mixins';
 
+:host {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 h1{
   font-size: 2rem;
   font-weight: 500;
@@ -17,15 +23,21 @@ h1{
 }
 
 .container {
-  width: 600px;
-  max-width: 800px;
-  margin: 30px auto;
+  width: clamp(500px, 50%, 600px);
+  margin-top: 1rem;
   background-color: variables.$background-color;
   padding: 20px;
   border-radius: 10px;
   box-shadow: variables.$card-shadow;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: variables.$text-color;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    width: 100%;
+  }
 }
 
 .formSection {

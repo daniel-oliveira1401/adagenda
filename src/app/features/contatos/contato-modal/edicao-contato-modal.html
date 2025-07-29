@@ -1,4 +1,4 @@
-<div class="modal-backdrop" *ngIf="user != undefined" (click)="onFechar()">
+<div class="modal-backdrop" *ngIf="contato != undefined" (click)="onFechar()">
   <form #form="ngForm" class="modal listSection" (ngSubmit)="onSalvar()" (click)="$event.stopPropagation()" >
     <h3>{{ehAdicionar() ? 'Adicionar Contato' : 'Editar Contato'}}</h3>
     <hr>
@@ -6,17 +6,17 @@
       <label>
         Nome:
       </label>
-      <input required name="nome" [(ngModel)]="user.nome" />
+      <input required name="nome" [(ngModel)]="contato.nome" />
       
       <label>
         Telefone:
       </label>
-      <input required name="telefone" type="tel" [(ngModel)]="user.telefone" />
+      <input required name="telefone" type="tel" [(ngModel)]="contato.telefone" />
       
       <label>
         Email:
       </label>
-      <input name="email" [(ngModel)]="user.email" type="email" />
+      <input name="email" [(ngModel)]="contato.email" type="email" />
 
     </div>
     
